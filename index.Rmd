@@ -12,7 +12,7 @@ output:
 ## Project thoughts
 
 Over the last couple years, there has been a dramatic rise in conservative and far-right ideology within Western countries. As a Canadian, I've observed an uncanny correlation between the rise of U.s. far-right political groups and the rise of similar groups within my own country. I've also observed personally a connection between U.S. and Canadian talking points, with the former influencing the latter to the point where Canadian groups are passionate about uniquely American cultural/historical events (American flags, "don't tread on me", support for the confederation, etc.). I want to see if there is a correlation between U.S. and Canadian voting behaviour/political ideology and whether there is an observable exchange across the border. The presence of far-right organizations and demonstrations could also be analysed.
+ 
 
-
-
+ 
 
