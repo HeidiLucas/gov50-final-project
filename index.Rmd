@@ -1,18 +1,20 @@
 ---
-title: "Cross-Border Conservatism"
+title: "Greenlandic Party Preferences in Danish Government"
 author: "Heidi Lucas"
-description: "Analysing the Rise of Conservative Ideology between the U.S. and Canada"
+description: "Comparing General Election Voting Patterns in Greenland and mainland Denmark" 
+
 output:
   distill::distill_article:
     self_contained: false
 ---
 
-
-
 ## Project thoughts
 
-Over the last couple years, there has been a dramatic rise in conservative and far-right ideology within Western countries. As a Canadian, I've observed an uncanny correlation between the rise of U.s. far-right political groups and the rise of similar groups within my own country. I've also observed personally a connection between U.S. and Canadian talking points, with the former influencing the latter to the point where Canadian groups are passionate about uniquely American cultural/historical events (American flags, "don't tread on me", support for the confederation, etc.). I want to see if there is a correlation between U.S. and Canadian voting behaviour/political ideology and whether there is an observable exchange across the border. The presence of far-right organizations and demonstrations could also be analysed.
- 
+Do Greenlandic voters support different parties than mainland Denmark voters within the General Danish elections and what party platforms do they prefer? In this study, I plan to examine voting patterns over time between four different voting regions during the Folketing, or General Danish Elections. Three of these regions are within Denmark (HOvedstaden, Midtjylland-Nordjylland, Sjælland-Syddanmark), and the other region is Greenland. I hypothesize that Greenlandic votes will differ significantly from Danish votes. Greenland is still one of the few countries that is partially controlled by a colonial government. Due to this unique regional and political structure, I expect that Greenlandic voters align more with left-leaning platforms, especially due to factors such as social structure, cultural norms, environmentalism, and the salience of more progressive views such as Greenlandic sovereignty. I will be using election data from Statistics Denmark and the Straubinger/folketingsvalg dataset. 
 
- 
+
+
+
+
+
 
