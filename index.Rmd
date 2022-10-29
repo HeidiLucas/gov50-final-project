@@ -1,6 +1,6 @@
 ---
 title: "Greenlandic Party Preferences in Danish Government"
-author: "Heidi Lucas"
+author: "Heidi Lucas" 
 description: "Comparing General Election Voting Patterns in Greenland and mainland Denmark" 
 
 output:
