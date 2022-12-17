@@ -1,0 +1,63 @@
+country,name,Autocratic,inst_prac,Group,power,inst_val,group_val,cluster,Bureaucratic,Assertiveness
+2,England,2.55,4.27,4.08,2.8,4.31,5.55,Anglo,3.54,4.15
+3,Costa Rica,2.46,3.93,5.32,2.58,5.18,6.08,Latin America,3.98,3.75
+5,Italy,2.64,3.68,4.94,2.47,5.13,5.72,Latin Europe,3.61,4.07
+6,India,3.1,4.38,5.92,2.64,4.71,5.32,Southern Asia,4.10,3.73
+7,Namibia,2.58,4.13,4.52,2.86,4.38,6.07,Sub-Sahara Africa ,4.33,3.91
+8,Czech Republic,2.04,3.6,3.18,4.35,3.85,4.06,Eastern Europe,3.68,3.69
+9,Venezuela,3,3.96,5.53,2.29,5.39,6.17,Latin America,4.41,4.33
+10,Taiwan,3.07,4.59,5.59,3.09,5.15,5.45,Confucian Asia,4.52,3.92
+11,Singapore,2.73,4.9,5.64,3.04,4.55,5.5,Confucian Asia,3.81,4.17
+12,Hong Kong,3.27,4.13,5.32,3.24,4.43,5.11,Confucian Asia,3.83,4.67
+13,Ecuador,2.5,3.9,5.81,2.3,5.41,6.17,Latin America,4.30,4.09
+14,IRAN,3.07,3.88,6.03,2.8,5.54,5.86,Middle East,4.45,4.04
+15,Mexico,3.35,4.06,5.71,2.85,4.92,5.95,Latin America,4.48,4.45
+16,El Salvador,2.64,3.71,5.35,2.68,5.65,6.52,Latin America ,4.34,4.62
+17,Israel,2.88,4.46,4.7,2.72,4.27,5.75,Latin Europe,3.87,4.23
+18,Hungary,2.56,3.53,5.25,2.49,4.5,5.54,Eastern Europe,3.43,4.79
+19,Russia,3.86,4.5,5.63,2.62,3.89,5.79,Eastern Europe,3.21,3.68
+20,Zambia,2.54,4.61,5.84,2.43,4.74,5.77,Sub-Sahara Africa ,4.43,4.07
+21,Indonesia,3.27,4.54,5.68,2.69,5.18,5.67,Southern Asia,4.87,3.86
+22,Kazakhstan,2.94,4.29,5.26,3.15,4.04,5.44,Eastern Europe,3.64,4.46
+23,Zimbabwe,2.35,4.12,5.57,2.67,4.87,5.85,Sub-Sahara Africa ,3.73,4.06
+24,Qatar,3.12,4.5,4.71,3.23,5.13,5.6,Middle East,4.13,4.11
+26,South Korea,3.77,5.2,5.54,2.55,3.9,5.41,Confucian Asia,3.94,4.40
+27,Morocco,2.75,3.87,5.87,3.11,5,5.68,Middle East,3.75,4.52
+28,Portugal,2.3,3.92,5.51,2.38,5.3,5.94,Latin Europe,3.19,3.65
+29,China,2.66,4.77,5.8,3.1,4.56,5.09,Confucian Asia,3.94,3.76
+31,Japan,3.18,5.19,4.63,2.86,3.99,5.26,Confucian Asia,3.90,3.59
+32,Colombia,2.44,3.81,5.73,2.04,5.38,6.25,Latin America,3.78,4.20
+34,Albania,3.39,4.54,5.74,3.52,4.44,5.22,Eastern Europe,4.65,4.89
+35,Turkey,3.22,4.03,5.88,2.41,5.26,5.77,Middle East,4.02,4.53
+37,Finland,2.11,4.63,4.07,2.19,4.11,5.42,Nordic Europe,2.87,3.81
+38,Poland,3.21,4.53,5.52,3.12,4.22,5.74,Eastern Europe,3.89,4.06
+41,Egypt,3.25,4.5,5.64,3.24,4.85,5.56,Middle East,4.37,3.91
+42,Spain,2.6,3.85,5.45,2.26,5.2,5.79,Latin Europe,4.11,4.42
+43,South Africa (Black Sample),2.89,4.39,5.09,3.65,4.3,4.99,Anglo,4.16,4.36
+46,Guatemala,2.35,3.7,5.63,2.35,5.23,6.14,Latin America,4.38,3.89
+48,Ireland,2.48,4.63,5.14,2.71,4.59,5.74,Anglo,3.50,3.92
+49,Bolivia,2.79,4.04,5.47,3.41,5.1,6,Latin America,4.85,3.79
+51,Austria,1.9,4.3,4.85,2.44,4.73,5.27,Germanic Europe,3.36,4.62
+55,Switzerland,1.91,4.06,3.97,2.44,4.69,4.94,Germanic Europe,3.00,4.51
+56,Netherlands,2.08,4.46,3.7,2.45,4.55,5.17,Germanic Europe,3.22,4.32
+57,France,2.36,3.93,4.37,2.76,4.86,5.42,Latin Europe,3.17,4.13
+58,French Switzerland,2.91,4.22,3.85,2.8,4.31,5.35,Latin Europe,3.21,3.47
+60,Australia,2.28,4.29,4.17,2.78,4.4,5.75,Anglo,3.56,4.28
+61,Greece,2.14,3.25,5.27,2.39,5.4,5.46,Eastern Europe,3.74,4.58
+62,Sweden,2.41,5.22,3.66,2.7,3.94,6.04,Nordic Europe,3.19,3.38
+65,South Africa (White Sample),2.3,4.62,4.5,2.64,4.38,5.91,Anglo,3.53,4.60
+67,Canada (English-speaking),1.89,4.38,4.26,2.7,4.17,5.97,Anglo,3.45,4.05
+68,Brazil,1.93,3.83,5.18,2.35,5.62,5.15,Latin America,3.85,4.20
+69,Kuwait,2.96,4.49,5.8,3.17,5.15,5.43,Middle East,4.25,3.63
+70,Philippines,2.7,4.65,6.36,2.72,4.78,6.18,Southern Asia,4.05,4.01
+78,Argentina,2.23,3.66,5.51,2.33,5.32,6.15,Latin America,3.85,4.22
+85,Nigeria,2.75,4.14,5.55,2.69,5.03,5.48,Sub-Sahara Africa ,4.53,4.79
+87,New Zealand,2.63,4.81,3.67,3.53,4.2,6.21,Anglo,3.86,3.42
+88,Slovenia,2.49,4.13,5.43,2.57,4.38,5.71,Eastern Europe,4.19,4.00
+89,Malaysia,2.86,4.61,5.51,2.97,4.87,5.85,Southern Asia,3.95,3.87
+93,Germany (EAST),2.06,3.56,4.52,2.69,4.68,5.22,Germanic Europe,3.40,4.73
+94,Germany (WEST),1.95,3.79,4.02,2.54,4.82,5.18,Germanic Europe,3.00,4.55
+96,Denmark,2.1,4.8,3.53,2.76,4.19,5.5,Nordic Europe,2.82,3.80
+97,Georgia,2.64,4.03,6.19,2.84,3.83,5.66,Eastern Europe,4.21,4.18
+98,Thailand,2.58,4.03,5.7,2.86,5.1,5.76,Southern Asia,4.89,3.64
+99,USA,2.03,4.2,4.25,2.85,4.17,5.77,Anglo,3.90,4.55

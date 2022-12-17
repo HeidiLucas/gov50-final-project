@@ -1,19 +1,252 @@
 ---
-title: "Regional Voter Differences in the Folketing"
+title: "Autocracy and Societal Culture"
 author: "Heidi Lucas" 
-description: "Comparing Danish General Election Voting Patterns between Greenland and mainland Denmark" 
-
+description: "An analysis of the 2004 GLOBE study: Understanding the Relationship Between National Culture, Societal Effectiveness and Desirable Leadership Attributes"
 output:
   distill::distill_article:
     self_contained: false
 ---
+```{r setup, include = FALSE}
 
-## Project thoughts
+#Data
+library(tidyverse)
+library(broom)
+library(kableExtra)
 
-How do regional differences in the voter population affect party support in the General Danish elections? In this study, I plan to examine voting patterns over time between four different voting regions during the Folketing, or General Danish Elections. Three of these regions are within Denmark (Hovedstaden, Midtjylland-Nordjylland, Sjælland-Syddanmark), and the other region is Greenland, an island nation that is part of the Kingdom of Denmark. I hypothesize that Greenlandic votes will differ significantly from Danish votes. Greenland is still one of the few countries that are partially controlled by a colonial government. Due to this unique regional and political structure, I expect that Greenlandic voters align more with left-leaning platforms, especially due to factors such as social structure, cultural norms, and the salience of more progressive views such as Greenlandic sovereignty. I will be using election data from Statistics Denmark and the Straubinger/folketingsvalg dataset. My explanatory variable will be voter region, categorized as Hovedstaden, Midtjylland-Nordjylland, Sjælland-Syddanmark, and Greenland. My outcome variable will be party votes, categorized by the different parties running within the election. To provide support for my hypothesis, there should be large regional differences in votes for different party platforms, especially for left-leaning platforms in Greenlandic voters. If there aren't large regional voting differences, in other words, Danish and Greenlandic voters display similar voting patterns, my hypothesis would be disproved.
+global <- read_csv("Data/Globe.csv")
+
+```
+
+
+<!-- INTRO <250 words/1-2 par -->
+
+<!-- DATA <OPEN words (500-700)/1-3 par -->
+<!-- 	Discussion of data -->
+<!-- 	Discussion of variables -->
+<!--     * PLOT OF OUTCOME VARIABLE !!! -->
+<!-- 	Discussion of research design (cross sec, panel, etc.) -->
+
+<!-- RESULTS <OPEN words/2-3 par -->
+<!--     * PLOT OF BIVARIATE RELATIONSHIP/MAIN RELATIONSHIP -->
+<!--     * REGRESSION RESULTS (Table(s) or plot(s)) -->
+<!-- 	Discussion of significance (or even R2?) -->
+<!-- 	Discussion around causality, confounders, etc. -->
+
+<!-- CONCLUSION <250 words/1 par -->
+<!-- 	Summarizing findings -->
+<!-- 	Limitations -->
+<!-- 	Hypothetical/practicable improvements -->
+
+
+<!----------------------------------------------------------------------------->
+
+# Introduction
+
+
+Using the 2004 GLOBE (Global Leadership and Organizational Behavior Effectiveness) Survey, this project explores the interrelationship between autocracy and national culture. Specifically, this project will ask whether a country's autocratic score correlates to a country's societal culture on institutional collectivism.
+
+By mapping out this correlation, one could determine whether a country's government structure (either more autocratic or democratic) influences citizen behaviour (more collective or individual). 
+
+<!----------------------------------------------------------------------------->
+
+# Data and research design
+
+
+<!-- 	Discussion of data -->
+<!-- 	Discussion of research design (cross sec, panel, etc.) -->
+
+To investigate this relationship, we are relying on phase 2 data from the [GLOBE 2004 study](https://globeproject.com/study_2004_2007#data), merging data from both the [GLOBE Phase 2 Aggregated Societal Level Data for Leadership Scales](https://globeproject.com/data/GLOBE-Phase-2-Aggregated-Leadership-Data.xls) and [GLOBE Phase 2 Aggregated Societal Level Data for Society Culture Scales](https://globeproject.com/data/GLOBE-Phase-2-Aggregated-Societal-Culture-Data.xls). 
+
+This dataset covers observations of 62 countries across the following variables:
+
+**1. "country":** Numeric indicator of country.
+
+**2. "name":** Character of country name.
+
+**3. "autocratic":** Numeric of Autocratic score.
+
+**4. "inst_prac":** Numeric of Institutional Collectivism score.
+
+**5. "bureaucratic":** Numeric of Bureaucratic Leadership score, originally labelled "Procedural" in the GLOBE database.
+
+**6. "group":** Numeric of In-group Collectivism score.
+
+**7. "assertiveness":** Numeric of Assertiveness Social Practices score.
+
+**8. "cluster":** Character of Country Cluster (Categories include Anglo, Latin America, Latin Europe, Southern Asia, Sub-Saharan Africa, Confucian Asia, Middle East, Latin Europe, Eastern Europe, Southern Asia, Nordic Europe, and Germanic Europe).
+
+GLOBE definitions of institutional and in-group collectivism are as follows:
+
+**Institutional Collectivism:** The degree to which organizational and societal institutional practices encourage and reward (and should encourage and reward) collective distribution of resources and collective action.
+
+**In-Group Collectivism:** The degree to which individuals express (and should express) pride, loyalty, and cohesiveness in their organizations or families.
+
+The scores of each variable were determined through surveys taken by over 17000 middle managers in the participating countries. Participants of these surveys answered questions on a scale from 1 to 7; thus each numeric value has a range from 1 to 7.
+
+This research design is a cross-sectional, correlational analysis, and makes no causal assumptions or claims.
+
+<!-- 	Discussion of variables -->
+<!--     * PLOT OF OUTCOME VARIABLE !!! -->
+
+The GLOBE data provides the outcome variable of **Institutional Collectivism** which is a numeric scale of the degree to which organizational and societal institutional practices encourage and reward (and should encourage and reward) collective distribution of resources and collective action. This outcome variable ranges from 3.25 to 5.22, with a median of 4.21 and a mean of 4.238.
+
+
+```{r, echo = FALSE, fig.width = 4.5, fig.height = 4.5}
+
+global |>
+  ggplot() +
+  geom_histogram(
+    aes(
+      x = inst_prac, 
+      y = ..count../sum(..count..)),
+    fill = "grey20", col = "white", 
+    bins = 15) +
+  labs(
+    title = "Distribution of Institutional Collectivism Scores",
+    x = "Institutional Collectivism Score",
+    y = "Proportion",
+    caption = "Source: Global Leadership and Organizational Behavior Effectiveness (GLOBE)"
+  )
+
+```
+
+GLOBE data also provides the explanatory variable of **Autocratic**: a numeric scale of how autocratic or democratic a country is. Larger scores indicate a more autocratic country. The autocratic variable ranges from 1.89 to 3.86, and has a median of 2.615 and a mean of 2.645. 
+
+
+```{r, echo = FALSE, fig.width = 4.5, fig.height = 4.5}
+
+
+global |>
+  ggplot() +
+  geom_histogram(
+    aes(
+      x = Autocratic, 
+      y = ..count../sum(..count..)),
+    fill = "grey20", col = "white", 
+    bins = 20) +
+  labs(
+    title = "Distribution of Autocratic Scores",
+    x = "Autocratic Score",
+    y = "Proportion",
+    caption = "Source: Global Leadership and Organizational Behavior Effectiveness (GLOBE)"
+  )
+
+```
 
 
 
+
+
+
+
+<!----------------------------------------------------------------------------->
+
+# Results
+
+The bivariate relationship between autocratic and institutional collectivism scores can be visualized through a scatter plot. The graph below plots autocratic scores on the x-axis and institutional collectivism scores on the y-axis, with each point representing a specific country's autocratic and institutional collectivism scores. The points are also coloured based on their country cluster category. 
+
+
+<!-- * PLOT OF BIVARIATE RELATIONSHIP/MAIN RELATIONSHIP -->
+
+```{r, echo = FALSE}
+
+global |> 
+  ggplot(aes(
+    x = Autocratic, 
+    y = inst_prac)) +
+  geom_point(mapping = aes(colour = cluster)) +
+  geom_smooth(method = "lm") +
+  labs(
+    title = "Institutional Collectivism by Autocratic Score",
+    x = "Autocratic Score",
+    y = "Institutional Collectivism Score",
+    caption = "Source: Global Leadership and Organizational Behavior Effectiveness (GLOBE)") +
+   guides(color = guide_legend(title = "Country Cluster"))
+```
+
+The bivariate plot suggests that there is a positive relationship between autocratic and institutional collectivism scores. In other words, the plot suggests that more autocratic (and less democratic) countries are correlated to social cultures with higher institutional collectivism. Several patterns emerge among the Country Clusters. Going by each quadrant of collectivism and autocratic scores, within quadrant I (high collectivism-high autocracy) are Confucian Asian countries (Taiwan, Singapore, Hong Kong, South Korea, China, Japan), within quadrant II (high collectivism-low autocracy) are Nordic European countries (Finland, Sweden, Denmark), within quadrant III (low collectivism-low autocracy) are Germanic European countries (Austria, Switzerland, Netherlands, Germany), and within quadrant IV (low collectivism-high autocracy) are Middle Eastern countries (Iran, Qatar, Morocco, Turkey, Egypt, Kuwait). This plot reaffirms common assumptions about country clusters, for example that Nordic countries are very collective and democratic due to their generous welfare-state models.
+
+
+This bivariate relationship will be further explored through a multivariate regression.
+
+<!-- * REGRESSION RESULTS (Table(s) or plot(s)) -->
+
+### Regression results
+
+A bivariate and multivariate regression model of the GLOBE data are presented below. The bivariate model regresses the institutional collectivism score on the autocratic score. The multivariate model includes other societal culture and leadership variables, such as in-group collectivism, bureaucracy, and individual assertiveness, all measured on a similar survey scoring system. 
+
+The regression results demonstrate a similar correlation to the bivariate plot: it shows a stastistically significant positive correlation between a country's autocratic score and institutional collectivism. 
+
+
+```{r, echo = FALSE, results = 'asis'}
+#Models: bivariate, multivariate
+
+
+mod1 <- lm(
+  data = global, 
+  inst_prac ~ Autocratic)
+mod2 <- lm(
+  data = global, 
+  inst_prac ~ 
+    Autocratic + 
+    Group + Bureaucratic + Assertiveness)
+
+
+#Regression results table
+results <-
+  full_join(
+    mod1 |> 
+      broom::tidy() |> 
+      select(term, est1 = estimate, se1 = std.error, pval1 = p.value),
+    mod2 |> 
+      broom::tidy() |> 
+      select(term, est2 = estimate, se2 = std.error, pval2 = p.value)) |>
+  select(term, matches("est"), matches("se"), matches ("pval"))
+
+results |>
+  knitr::kable(
+    booktabs = TRUE, digits = 2,
+    col.names = c("Coefficient", rep(c("Bivariate", "Multivariate"), 3))) |>
+  kable_styling(
+    position = "center", 
+    latex_options = "HOLD_position") |>
+  add_header_above(
+    header = c(
+      " " = 1, 
+      "Coef. estimate" = 2, 
+      "Std. error" = 2, 
+      "P-value" = 2))
+```
+
+The bivariate model suggests that on average, a 1-point increase in a country's autocratic score is associated with a 0.33 point increase in its institutional collectivism. This increase is even greater using the multivariate model at 0.49 points. In other words, when in-group collectivism, bureaucratic, and assertiveness scores are held constant, a 1-point increase in a country's autocratic score is associated with a 0.49 point increase in institutional collectivism. 
+
+### Statistical significance
+
+At a test level $\alpha = 0.05$, both the bivariate and multivariate models show a statistically significant correlation between autocratic and institutional collectivism scores. As seen in the regression chart, both p-values are zero. This means that the observed correlation is unlikely to be due to chance and we can reject the null hypothesis. 
+
+### Causality and confounders
+
+This is an observational research project. Due to this, causality cannot be determined and instead the observed relationship is said to be correlation. Furthermore, autocratic scores are seen as an explanatory variable rather than a treatment variable because it was not randomly assigned. Regardless, these analyses still display a positive, statistically significant correlation between a country's autocratic and institutional collectivism scores. 
+
+In the multivariate model, several potential confounding variables are included and controlled for. These are in-group collectivism, bureaucratic, and assertiveness scores. These social cultural and leadership variables could influence institutional collectivism behaviour through other mechanisms. For example, increased bureaucracy would also increase collective distribution of resources and collective action. In controlling for these variables and limiting some confounding, the multivariate model suggests a stronger correlation between autocracy and collectivist behaviour. However, other confounding variables are likely to exist. Another possible confounder could be the level of a country's development. Developing countries may have limited institutional capacity, thereby decreasing the potential for collective distribution of resources and collective action. This would impact overall institutional collectivism scores without involving autocracy as a variable. 
+
+
+<!----------------------------------------------------------------------------->
+
+# Conclusion
+
+<!-- Summarizing findings -->
+
+This project shows a positive, statistically significant relationship between a country's autocratic and institutional collectivism score. In other words, democratic countries are more likely to be individualistic and autocratic countries are more likely to be collectivist. As seen in the bivariate plot, country cluster patterns emerge across the various plot quadrants; however, outliers do remain. 
+
+The multivariate model controls for several confounding variables (in-group collectivism, bureaucracy, assertiveness) and displays a stronger positive relationship. Specifically, the multivariate model associates a collectivism increase of 0.49 points per 1-point increase in autocratic score, contrasting the 0.33 increase in the bivariate model. 
+
+The main limitation of this dataset is its size. The GLOBE survey only collects data from 62 countries, and thus does not provide an accurate analysis of the whole world.
+
+To improve this study, one might also add a time/year component and address other confounders like a country's development index. 
+
+
+<!----------------------------------------------------------------------------->
 
 
 
